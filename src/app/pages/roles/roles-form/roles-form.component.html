@@ -1,0 +1,30 @@
+<section class="roles-form_wrapper">
+  <app-card header="Datos del Rol">
+    <form>
+      <div class="roles-form_content">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput name="name" [(ngModel)]="rol.name" />
+        </mat-form-field>
+        <mat-checkbox
+          color="primary"
+          [checked]="rol.active"
+          (change)="rol.active = !rol.active">
+          {{rol.active ? "Activo" : "Desactivado"}}
+        </mat-checkbox>
+        <app-entitlement-tree
+          *ngIf="entitlements"
+          [selectable]="true"
+          [entitlements]="entitlements"></app-entitlement-tree>
+      </div>
+      <div class="roles-form_bottom">
+        <button
+          mat-flat-button
+          color="primary"
+          class="roles-form_bottom_action"
+          (click)="guardar()">Guardar</button>
+      </div>
+    </form>
+  </app-card>
+</section>
+

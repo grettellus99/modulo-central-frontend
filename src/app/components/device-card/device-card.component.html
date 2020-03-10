@@ -1,0 +1,48 @@
+<form [formGroup]="deviceForm">
+  <app-card [header]="header">
+    <div class="device-card_content">
+      <mat-form-field appearance="outline" class="device-input">
+        <mat-label>Nombre de Dispositivo</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="device-input">
+        <mat-label>Mac del Dispositivo</mat-label>
+        <input matInput formControlName="mac" />
+      </mat-form-field>
+      <div class="device-card_content_type-list">
+       <a
+         class="device-card_content_type"
+         title="laptop"
+         (click)="changeType(1)"
+         [ngClass]="getDeviceIndicatorClass(1)">
+         <mat-icon>laptop</mat-icon>
+       </a>
+       <a
+         class="device-card_content_type"
+         title="tablet"
+         (click)="changeType(2)"
+         [ngClass]="getDeviceIndicatorClass(2)">
+         <mat-icon>tablet</mat-icon>
+       </a>
+       <a
+         class="device-card_content_type"
+         title="telefono"
+         (click)="changeType(3)"
+         [ngClass]="getDeviceIndicatorClass(3)">
+         <mat-icon>smartphone</mat-icon>
+       </a>
+      </div>
+      <mat-checkbox
+        style="margin: 8px 0;"
+        color="primary"
+        formControlName="isEnabled">Activo</mat-checkbox>
+    </div>
+    <button
+      mat-flat-button
+      color="primary"
+      class="device-card_button"
+      (click)="onSubmit()">
+      Confirmar Cambios
+    </button>
+  </app-card>
+</form>

@@ -1,0 +1,34 @@
+@import "../../../assets/scss/display";
+@import "../../../assets/scss/colors";
+
+.user-information {
+  @include display-flex($direction-row, $justify-start, $align-center);
+  padding: 12px 8px;
+  margin-bottom: 12px;
+  min-width: 100px;
+}
+
+.user-information-content {
+  @include display-flex($direction-column, $justify-start, $align-start);
+}
+
+.user-information-header {
+  color: $color-gray-4;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.user-information-subheader {
+  color: $color-gray-3;
+  font-size: 12px;
+}
+
+.user-power-button {
+  display: flex;
+
+  img {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+  }
+}

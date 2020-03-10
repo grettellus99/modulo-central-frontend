@@ -1,0 +1,160 @@
+
+
+////////////////////// Speed Meters y ProgressBars /////////////////////
+
+// Contenedor Principal
+.login-card-features {
+  background-color: white;
+  display: flex;
+  padding-top: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+// Contenedor del texto e icono de los ProgressBar y del texto y gauge de los Speed Meter
+.infoFeature {
+  width: 75%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.3rem;
+}
+
+// Contenedor del texto de los ProgressBar y Speed Meter
+.info{
+  display: flex;
+  justify-content: space-between;
+}
+
+///////////////////////// SpeedMeter //////////////////////////////
+
+// Contenedor principal de ambos SM
+.SMs {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 90%;
+}
+// Contenedor que agrupa los SM dentro de SMs
+.SM-containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+}
+
+// Contenedor principal de cada Speed Meter
+.main-info-SM {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+// Contenedor del Speed Meter
+.speed-meter {
+  height: 9rem;
+  width: 13.75rem;
+  position: relative;
+  top: 0.5rem;
+}
+// Contenedor del texto y gauge de los Speed Meter especificamente
+.infoFeature-SM {
+ padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+//Contenedor texto del Speed Meter
+.text-SM {
+  text-align: center;
+}
+
+// Texto del Speed Meter
+.text-SM mat-label strong{
+  text-align: center;
+}
+
+ ::ng-deep .progress-bar .mat-progress-bar .mat-progress-bar-element {
+ background-color: bisque;
+ }
+
+
+////////////////////////// Progress Bar //////////////////////////
+
+// Contenedor principal de los ProgressBar
+.main-info-PB {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  //align-content: center;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+
+// Iconos de los ProgressBar
+.ico {
+  width: 4rem;
+  align-self: flex-start;
+}
+
+// Contenedor del ProgressBar
+.progress-bar {
+  padding: 0.52rem 0;
+}
+
+// ProgressBar
+mat-progress-bar {
+  height: 0.7rem;
+  border-radius: 0.2rem;
+}
+
+.value {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.value mat-label {
+  text-align: end;
+}
+
+@media (max-width: 950px) {
+
+  .login-card-features {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .SM-containers {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .infoFeature {
+    width: 100%;
+  }
+  .main-info-PB, .main-info-SM {
+    margin-top: 1rem;
+    position: static;
+  }
+}
+@media (min-height: 1000px) {
+
+  .login-card-features {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .SM-containers {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .infoFeature {
+    width: 100%;
+  }
+  .main-info-PB, .main-info-SM {
+    margin-top: 1rem;
+  }
+}

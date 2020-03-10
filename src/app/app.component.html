@@ -1,0 +1,53 @@
+<span *ngIf="currentUser; then signedBlock else signinBlock"></span>
+
+<ng-template #signedBlock>
+  <app-main-nav>
+    <router-outlet></router-outlet>
+  </app-main-nav>
+</ng-template>
+
+<ng-template #signinBlock>
+  <div class="main-container">
+    <mat-toolbar color="primary">
+      <div class="header">
+        <div class="ico">
+          <mat-icon><img class="icon" src="../assets/images/logo_uni.png" alt="Logo de la universidad"></mat-icon>
+        </div>
+        <div class = "header-text">
+          <h4>Universidad de Matanzas</h4>
+        </div>
+      </div>
+    </mat-toolbar>
+    <div class="login-container">
+      <div class="login">
+        <app-login [isLoading]="isLoading" (login)="handleOnLogin($event)"></app-login>
+      </div>
+      <div class="login-features">
+        <app-login-features> </app-login-features>
+      </div>
+    </div>
+    <mat-toolbar class="footer">
+      <div class="icons-container">
+        <div class="footer-icon">
+          <a href="#1"><img class="gitlab" src="../assets/images/gitlab-brands.svg" alt="gitlab icon"></a>
+        </div>
+        <div class="footer-icon">
+          <a href="#2"><img class="wekan" src="../assets/images/wekan.png" alt="wekan icon"></a>
+        </div>
+        <div class="footer-icon">
+          <a href="#3"><img class="rocketchat" src="../assets/images/rocketchat.png" alt="rocketchat icon"></a>
+        </div>
+        <div class="footer-icon">
+          <a href="#4"><img class="nextcloud" src="../assets/images/nextcloud2.png" alt="nextcloud icon"></a>
+        </div>
+      </div>
+    </mat-toolbar>
+  </div>
+</ng-template>
+
+<!--<app-main-nav>-->
+<!--  <router-outlet></router-outlet>-->
+<!--</app-main-nav>-->
+
+
+

@@ -1,0 +1,130 @@
+@import "../../../assets/scss/colors";
+
+.dashboard-card {
+  height: 80%;
+  width: 80%;
+}
+
+.dashboard-card_couta-card_comsumtion {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.dashboard-card_couta-card_comsumtion-bar {
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+
+.dashboard-card_couta-card_extra {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-card_couta-card_extra_card {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  cursor: default;
+
+  &:hover {
+    background-color: $color-gray-1;
+  }
+}
+
+.dashboard-card_couta-card_extra_card_left {
+  @extend .dashboard-card_couta-card_extra_card;
+  border-top-right-radius: 8px;
+}
+.dashboard-card_couta-card_extra_card_right {
+  @extend .dashboard-card_couta-card_extra_card;
+  border-top-left-radius: 8px;
+}
+
+.dashboard-card_couta-card_extra_card_header {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.dashboard-card_couta-card_extra_card_data {
+  text-align: center;
+  font-size: 28px;
+}
+
+.dashboard-card_device-card_device {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-radius: 5px;
+  cursor: default;
+
+  &:hover {
+    background-color: $color-gray-1;
+  }
+
+  &:active {
+    background-color: $color-gray-2;
+  }
+}
+
+.dashboard-card_device-card_device-icon {
+  padding: 14px;
+  color: $color-gray-4;
+
+  mat-icon {
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+  }
+}
+
+.dashboard-card_device-card_device-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 1;
+  padding: 8px;
+}
+
+.dashboard-card_device-card_device-desc_title {
+  font-size: 14px;
+  color: $color-dark-1;
+  margin-bottom: 8px;
+}
+
+.dashboard-card_device-card_device-desc_mac {
+  font-size: 12px;
+  color: $color-gray-4;
+}
+
+.dashboard-card_device-card_device-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.dashboard-card_device-card_action {
+  border-radius: 0;
+}
+
+.dashboard-card_speedbar{
+  display: flex;
+  justify-content: space-between;
+  justify-items: start;
+  flex-direction: row;
+  width: 100%;
+  height: 95%;
+  }
+
+.speedbar{
+  width: 50%;
+  height: 95%;
+}

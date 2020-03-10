@@ -1,0 +1,22 @@
+@import "../../../assets/scss/display";
+@import "../../../assets/scss/colors";
+
+.user-card {
+    @include display-flex($direction-row, $justify-start, $align-center);
+}
+
+.user-card_data {
+    @include display-flex($direction-column, $justify-start, $align-start);
+    margin-left: 16px;
+}
+
+.user-card_data_user {
+    color: $color-gray-4;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.user-card_data_email {
+    color: $color-gray-3;
+    font-size: 14px;
+}

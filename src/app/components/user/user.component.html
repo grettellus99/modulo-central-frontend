@@ -1,0 +1,12 @@
+<mat-menu #userMenu="matMenu" xPosition="before" class="user-menu-wrapper">
+    <div class="user-information">
+        <input type="file" hidden #avatarPicker (change)="onImagePicked($event)" />
+        <app-user-card [user]="account" (avatarClick)="avatarPicker.click()"></app-user-card>
+    </div>
+    <button mat-menu-item class="user-power-button" (click)="logout()">
+        <img src="../../../assets/images/power-icon.svg" alt="power icon" />
+    </button>
+</mat-menu>
+<span [mat-menu-trigger-for]="userMenu">
+    <app-avatar size="medium" [photoUrl]="account.photo"></app-avatar>
+</span>

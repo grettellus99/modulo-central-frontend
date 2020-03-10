@@ -1,0 +1,21 @@
+.container-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+.container-rows {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+.center {
+  display: flex;
+  margin-top: 6rem;
+}
+table {
+  width: 100%;
+}
+

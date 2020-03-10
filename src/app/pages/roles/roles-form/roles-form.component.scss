@@ -1,0 +1,31 @@
+@import "../../../../assets/scss/display";
+@import "../../../../assets/scss/colors";
+
+.roles-form_wrapper {
+  @include display-flex($direction-column, $justify-start, $align-center);
+  padding-bottom: 40px;
+}
+
+.roles-form_content {
+  @include display-flex($direction-column, $justify-start, $align-stretch);
+  width: 400px;
+  padding: 12px;
+}
+
+.roles-form_content_label {
+  padding-left: 4px;
+  margin: 12px 0 4px;
+  color: $color-gray-4;
+}
+
+.roles-form_bottom {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.roles-form_bottom_action {
+  width: 100%;
+  border-radius: 0;
+}

@@ -1,0 +1,15 @@
+@import "../../../assets/scss/colors";
+
+.error-message {
+    color: transparent;
+    margin: 12px 0;
+    text-align: center;
+    transition: color 150ms linear;
+}
+
+.error-message--visible {
+    color: $color-error;
+    margin: 12px 0;
+    text-align: center;
+    transition: color 150ms linear;
+}

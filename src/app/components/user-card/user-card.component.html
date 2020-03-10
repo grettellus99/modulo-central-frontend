@@ -1,0 +1,7 @@
+<div class="user-card">
+    <app-avatar [photoUrl]="user?.photo" [size]="avatarSize" (click)="onAvatarClick($event)"></app-avatar>
+    <div class="user-card_data">
+        <span class="user-card_data_user">{{user?.name}}</span>
+        <span class="user-card_data_email">{{user?.email}}</span>
+    </div>
+</div>

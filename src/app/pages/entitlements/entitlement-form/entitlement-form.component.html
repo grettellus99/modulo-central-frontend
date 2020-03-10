@@ -1,0 +1,44 @@
+<section class="entitlement-form_wrapper">
+  <app-card header="Datos del Permiso">
+    <form *ngIf="form" [formGroup]="form">
+      <div class="entitlement-form_content">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="!form.get('name').valid">Debe introducir un nombre</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Codigo</mat-label>
+          <input matInput formControlName="code" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Orden</mat-label>
+          <input matInput type="number" formControlName="order" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Depende de</mat-label>
+          <mat-select formControlName="parent">
+            <mat-option
+              *ngFor="let ent of filterEntitlements()"
+              [value]="parent && ent.id === parent.id ? parent : ent">
+              {{ent.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-checkbox
+          color="primary"
+          [(ngModel)]="isActive"
+          [ngModelOptions]="{standalone: true}">
+          {{isActive ? 'Activo' : 'Desactivado'}}
+        </mat-checkbox>
+      </div>
+      <div class="entitlement-form_bottom">
+        <button
+          mat-flat-button
+          color="primary"
+          class="entitlement-form_bottom_action"
+          (click)="saveEntitlement()">Guardar</button>
+      </div>
+    </form>
+  </app-card>
+</section>

@@ -1,0 +1,21 @@
+@import "../../../assets/scss/colors";
+
+.entitlement-tree_node {
+  &:hover {
+    background-color: $color-gray-2;
+  }
+}
+
+.entitlement-tree_node_desc {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+}
+
+.entitlement-tree_node--padded {
+  padding-left: 12px;
+}
+
+.entitlement-tree_node_acction-btn {
+  color: $color-primary;
+}

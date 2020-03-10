@@ -1,0 +1,23 @@
+<form [formGroup]="registerForm" class="register">
+  <app-card header="Registro de Informacion">
+    <div class="register-form_content">
+      <mat-form-field appearance="outline">
+        <mat-label>CI</mat-label>
+        <input matInput formControlName="ci" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Telefono</mat-label>
+        <input matInput formControlName="phone" />
+      </mat-form-field>
+    </div>
+    <button
+      class="register-form_action"
+      mat-flat-button
+      color="primary"
+      (click)="onSubmit()">Guardar</button>
+  </app-card>
+</form>

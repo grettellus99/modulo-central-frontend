@@ -1,0 +1,15 @@
+<section class="entitlement-list_top-wrapper">
+  <header class="entitlement-list_header">
+    <span>Permisos</span>
+    <a mat-mini-fab color="primary" routerLink="./form">
+      <mat-icon>add</mat-icon>
+    </a>
+  </header>
+  <main *ngIf="entitlements && entitlements.length > 0" class="mat-elevation-z8">
+    <app-entitlement-tree
+      [showActions]="true"
+      [entitlements]="entitlements"
+      (edit)="edit($event)"
+      (remove)="remove($event)"></app-entitlement-tree>
+  </main>
+</section>

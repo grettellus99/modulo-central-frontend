@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm">
+  <div class="login-card mat-elevation-z8">
+    <span class="login-card_header"><img class="ico" src="../../../assets/images/login.svg"></span>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Usuario</mat-label>
+      <input matInput formControlName="username"/>
+      <mat-error *ngIf="loginForm.get('username').invalid">
+        El usuario introducido es incorrecto</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="password" />
+      <mat-error *ngIf="loginForm.get('password').invalid">
+        La contraseña introducida es incorrecta</mat-error>
+    </mat-form-field>
+    <br>
+    <span style="flex: 1"></span>
+    <button mat-button class="login-button" color="primary" (click)="onSubmit()">ENTRAR</button>
+    <app-loading [isLoading]="isLoading"></app-loading>
+  </div>
+</form>

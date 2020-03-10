@@ -1,0 +1,50 @@
+$color-primary: #165890;
+$color-primary-hover: #16659e;
+$color-primary-light: #007ead;
+
+$color-accent: #ff8600;//#00acc1;
+
+$color-error: #fe4849;
+$color-error-active: #ea4243;
+
+$color-gray-1: #f4f6f9;
+$color-gray-2: #e3e5ed;
+$color-gray-3: #a4a7b5;
+$color-gray-4: #888c8d;
+
+$color-dark-1: #061c3f;
+
+
+$mat-primary-color-definition: (
+  50 : #e3ebf2,
+  100 : #b9cdde,
+  200 : #8bacc8,
+  300 : #5c8ab1,
+  400 : #3971a1,
+  500 : #165890,
+  600 : #135088,
+  700 : #10477d,
+  800 : #0c3d73,
+  900 : #062d61,
+  A100 : #92baff,
+  A200 : #5f99ff,
+  A400 : #2c78ff,
+  A700 : #1368ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+

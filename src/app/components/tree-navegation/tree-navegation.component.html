@@ -1,0 +1,25 @@
+<!--suppress TypeScriptUnresolvedVariable -->
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree-root">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle >
+    <mat-list-item
+      [routerLink]="node.route"
+      routerLinkActive="active-link">
+      <mat-icon matListIcon [attr.aria-label]="node.type + 'icon'">{{ node.type }}</mat-icon>
+      <a matLine>{{ node.name }}</a>
+    </mat-list-item>
+  </mat-tree-node>
+
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild">
+    <mat-list-item matTreeNodeToggle>
+      <mat-icon matListIcon [attr.aria-label]="node.type + 'icon'">
+        {{ node.type }}
+      </mat-icon>
+      <a matLine>{{ node.name }}</a>
+      <button mat-icon-button>
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-tree-node>
+</mat-tree>

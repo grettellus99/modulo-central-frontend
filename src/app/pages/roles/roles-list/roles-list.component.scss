@@ -1,0 +1,26 @@
+@import "../../../../assets/scss/display";
+@import "../../../../assets/scss/colors";
+
+.full-width-table {
+  width: 100%;
+}
+
+.roles-list_top-wrapper {
+  padding: 0 75px;
+}
+
+.roles-list_header {
+  @include display-flex($direction-row, $justify-between, $align-center);
+  margin-bottom: 12px;
+}
+
+.roles-list_active {
+  color: $color-primary;
+}
+
+
+@media only screen and(max-width: 425px) {
+  .roles-top-wrapper {
+    padding: 16px 14px;
+  }
+}

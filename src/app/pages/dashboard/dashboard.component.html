@@ -1,0 +1,70 @@
+<div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="400px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <app-card header="Mi Couta" class="dashboard-card">
+        <span class="dashboard-card_couta-card_comsumtion">
+              {{prettyBytes(10240 * 5 * 1024)}} / {{prettyBytes(102400 * 1024)}}
+            </span>
+        <div class="dashboard-card_couta-card_comsumtion-bar">
+          <mat-progress-bar
+            mode="determinate"
+            [color]="assignColor(10)"
+            [value]="50" ></mat-progress-bar>
+        </div>
+        <div class="dashboard-card_couta-card_extra">
+          <div class="dashboard-card_couta-card_extra_card_left">
+            <span class="dashboard-card_couta-card_extra_card_header">Hoy</span>
+            <span class="dashboard-card_couta-card_extra_card_data">
+                  {{prettyBytes(10240 * 2 * 1024)}}
+                </span>
+          </div>
+          <div class="dashboard-card_couta-card_extra_card_right">
+            <span class="dashboard-card_couta-card_extra_card_header">Esta semana</span>
+            <span class="dashboard-card_couta-card_extra_card_data">
+                  {{prettyBytes(10240 * 4 * 1024)}}
+                </span>
+          </div>
+        </div>
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <app-card header="Mis Dispositivos" class="dashboard-card">
+        <div class="dashboard-card_device-card_device" *ngFor="let device of user.devices">
+          <div class="dashboard-card_device-card_device-icon">
+            <mat-icon *ngIf="device.deviceType === 1">laptop</mat-icon>
+            <mat-icon *ngIf="device.deviceType === 2">tablet</mat-icon>
+            <mat-icon *ngIf="device.deviceType === 3">smartphone</mat-icon>
+          </div>
+          <div class="dashboard-card_device-card_device-desc">
+            <span class="dashboard-card_device-card_device-desc_title">{{device.name}}</span>
+            <span class="dashboard-card_device-card_device-desc_mac">{{device.mac}}</span>
+          </div>
+          <div class="dashboard-card_device-card_device-date">
+           {{device.modifiedDate | date: "dd/MM/yy"}}
+          </div>
+        </div>
+        <span style="flex: 1"></span>
+        <a
+          class="dashboard-card_device-card_action"
+          mat-flat-button
+          color="primary"
+          routerLink="../devices">Actualizar</a>
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <app-card header="Registro de navegacion" class="dashboard-card" style="width: 90%">
+        <div class="dashboard-card_speedbar">
+          <app-speedbar class="speedbar" idname="nacional" [max]="60"></app-speedbar>
+          <app-speedbar class="speedbar" idname="internet" [max]="20"></app-speedbar>
+        </div>
+
+      </app-card>
+      </mat-grid-tile>
+
+
+  </mat-grid-list>
+
+
+</div>

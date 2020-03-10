@@ -1,0 +1,38 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">
+      Modulo Central
+    </mat-toolbar>
+    <mat-nav-list>
+      <app-tree-navegation></app-tree-navegation>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    <mat-toolbar color="primary" class="navbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon" style="color: white">menu</mat-icon>
+      </button>
+      <a mat-button routerLink="home"><h1>Universidad de Matanzas</h1></a>
+      <app-user></app-user>
+<!--      <div>-->
+<!--        <a mat-icon-button routerLink="/devices" color="primary">-->
+<!--          <mat-icon class="example-icon">devices</mat-icon>-->
+<!--        </a>-->
+<!--        <a mat-icon-button routerLink="/admin/users" color="primary">-->
+<!--          <mat-icon class="example-icon">people</mat-icon>-->
+<!--        </a>-->
+<!--      </div>-->
+    </mat-toolbar>
+    <section class="content">
+      <ng-content></ng-content>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

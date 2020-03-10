@@ -1,0 +1,47 @@
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding class="entitlement-tree_node">
+    <mat-checkbox *ngIf="selectable"
+                  class="entitlement-tree_node_desc entitlement-tree_node--padded"
+                  [checked]="checklistSelection.isSelected(node)"
+                  (change)="todoLeafItemSelectionToggle(node)">{{node.name}}</mat-checkbox>
+    <span *ngIf="!selectable" class="entitlement-tree_node_desc entitlement-tree_node--padded">{{node.name}}</span>
+    <button *ngIf="showActions"
+            mat-icon-button
+            class="entitlement-tree_node_acction-btn"
+            (click)="editNode(node)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button *ngIf="showActions"
+            mat-icon-button
+            class="entitlement-tree_node_acction-btn"
+            (click)="removeNode(node)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-tree-node>
+
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding class="entitlement-tree_node">
+    <button mat-icon-button matTreeNodeToggle
+            [attr.aria-label]="'toggle ' + node.filename">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    <mat-checkbox *ngIf="selectable"
+                  class="entitlement-tree_node_desc"
+                  matTreeNodeToggle
+                  [checked]="descendantsAllSelected(node)"
+                  [indeterminate]="descendantsPartiallySelected(node)"
+                  (change)="todoItemSelectionToggle(node)">{{node.name}}</mat-checkbox>
+    <span *ngIf="!selectable" matTreeNodeToggle class="entitlement-tree_node_desc">{{node.name}}</span>
+    <button *ngIf="showActions" mat-icon-button
+            class="entitlement-tree_node_acction-btn"
+            (click)="editNode(node)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button *ngIf="showActions" mat-icon-button
+            class="entitlement-tree_node_acction-btn"
+            (click)="removeNode(node)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-tree-node>
+</mat-tree>

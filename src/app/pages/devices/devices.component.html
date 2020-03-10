@@ -1,0 +1,8 @@
+<section class="devices" *ngIf="user">
+  <app-device-card
+    *ngFor="let device of user.devices"
+    header="Datos del Dispositivos"
+    [device]="device"
+    (save)="updateDevice($event)"
+    class="devices_card"></app-device-card>
+</section>

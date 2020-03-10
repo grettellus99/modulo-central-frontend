@@ -1,0 +1,21 @@
+$direction-row: row;
+$direction-column: column;
+
+$justify-start: flex-start;
+$justify-center: center;
+$justify-end: flex-end;
+$justify-between: space-between;
+$justify-around: space-around;
+
+$align-start: flex-start;
+$align-center: center;
+$align-end: flex-end;
+$align-stretch: stretch;
+
+
+@mixin display-flex($direction,$justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

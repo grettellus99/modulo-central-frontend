@@ -1,0 +1,28 @@
+@import "../../../assets/scss/colors";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.card_header {
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  font-size: 16px;
+  color: $color-gray-4;
+}
+
+.card_content {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

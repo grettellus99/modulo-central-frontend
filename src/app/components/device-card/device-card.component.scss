@@ -1,0 +1,45 @@
+@import "../../../assets/scss/colors";
+
+.device-card_content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+
+.device-card_content_type-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  cursor: initial;
+}
+
+.device-card_content_type {
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $color-gray-2;
+  }
+
+  mat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+  }
+}
+
+.device-card_content_type--selected {
+  color: $color-primary;
+  background-color: $color-gray-2;
+}
+
+.device-card_button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

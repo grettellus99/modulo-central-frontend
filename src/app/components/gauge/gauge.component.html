@@ -1,0 +1,64 @@
+
+
+<!--  <mwl-gauge-->
+<!--    [max]="300"-->
+<!--    [dialStartAngle]="0"-->
+<!--    [dialEndAngle]="180"-->
+<!--    [color]="onColor(valueGauge)"-->
+<!--    [animated]="true"-->
+<!--    [value]="valueGauge"-->
+<!--    [animationDuration]="1"-->
+<!--    [label]="onVelocity(valueGauge)">-->
+<!--  </mwl-gauge>-->
+
+  <mwl-gauge
+    [max]="300"
+    [dialStartAngle]="0"
+    [dialEndAngle]="180"
+    dialClass="dial"
+    valueClass="value"
+    [animated]="true"
+    [value]="valueGauge"
+    [animationDuration]="1"
+    *ngIf="valueGauge >= 200"
+    [color]="onColorPrimary"
+    [label]="onVelocity(valueGauge)">
+  </mwl-gauge>
+
+
+  <mwl-gauge
+    [max]="300"
+    [dialStartAngle]="0"
+    [dialEndAngle]="180"
+    dialClass="dial"
+    valueDialClass="value"
+    valueClass="value-dial"
+    [value]="valueGauge"
+    [animated]="true"
+    [animationDuration]="1"
+    *ngIf="valueGauge < 200 && valueGauge >= 100"
+    [color]="onColorAccent"
+    [label]="onVelocity(valueGauge)">>
+  </mwl-gauge>
+
+
+  <mwl-gauge
+    [max]="300"
+    [dialStartAngle]="0"
+    [dialEndAngle]="180"
+    dialClass="dial"
+    valueClass="value"
+    [value]="valueGauge"
+    [animated]="true"
+    [animationDuration]="1"
+    *ngIf="valueGauge < 100"
+    [color]="onColorWarn"
+    [label]="onVelocity(valueGauge)">>
+  </mwl-gauge>
+
+
+<!--[color]="onColor">-->
+<!--[] = "(this.valueGauge >= 80) ? onColorBlue : onColorWhiteCream"-->
+<!--[color] = "(this.valueGauge >= 60 && this.valueGauge < 80) ? onColorOrange : onColorWhiteCream"-->
+<!--[color] = "(this.valueGauge >= 40 && this.valueGauge < 60) ? onColorCream : onColorWhiteCream">-->
+<!--valueColor ? onColor : onColorBlue-->

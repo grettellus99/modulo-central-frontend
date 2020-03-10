@@ -1,0 +1,121 @@
+<form>
+  <div class="login-card-features">
+
+    <div class="SMs">
+      <div class="ico">
+        <img class="ico" src="../../../assets/images/traficodeConexion.svg">
+      </div>
+      <div class="infoFeature">
+        <div class="text">
+          <mat-label><strong>Tráfico de conexión</strong></mat-label>
+        </div>
+        <!--    Velocidad de las Redes-->
+        <div class="SM-containers">
+
+          <!--      Velocidad Internet-->
+          <div class="main-info-SM">
+            <div class="speed-meter">
+              <!--          <app-gauge class="speed-meter" [valueGauge]="this.kbytesSecondsInternet"></app-gauge>-->
+              <app-gauge-pro class="speed-meter" [gaugeTypeInternet]="true" [valueGauge]="mbitesUsedInternet"></app-gauge-pro>
+            </div>
+            <div class="infoFeature infoFeature-SM">
+              <div class="info">
+                <div class="text-SM">
+                  <mat-label>Internet (Mb)</mat-label>
+<!--                  <br>-->
+<!--                  <mat-label>{{mbitesUsedInternet}} Mb/s</mat-label>-->
+                </div>
+                <!--          <div class="value">-->
+                <!--            <mat-label>{{bytesSeconds}} bytes/s</mat-label>-->
+                <!--          </div>-->
+              </div>
+            </div>
+          </div>
+
+          <!--      Velocidad de la Red Nacional-->
+          <div class="main-info-SM">
+            <div class="speed-meter">
+              <!--          <app-gauge class="speed-meter" [valueGauge]="this.kbytesSecondsNational"></app-gauge>-->
+              <app-gauge-pro class="speed-meter" [gaugeTypeInternet]="false" [valueGauge]="mbitesUsedNational"></app-gauge-pro>
+            </div>
+            <div class="infoFeature infoFeature-SM">
+              <div class="info">
+                <div class="text-SM">
+                  <mat-label>Red Nacional (Mb)</mat-label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--    Cantidad de conexiones Internet-->
+    <div class="main-info-PB">
+      <div class="ico">
+        <img class="ico" src="../../../assets/images/conexionInt.svg">
+      </div>
+      <br>
+      <div class="infoFeature">
+        <div class="info">
+          <div class="text">
+            <mat-label> <strong>Cantidad de conexiones en Internet: </strong></mat-label>
+          </div>
+          <div class="value">
+            <mat-label>{{connectionsCountInternetNumber}} conexiones</mat-label>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <mat-progress-bar  mode="{{mode}}" [color]= "colorProgressBarInternet"  [value]="connectionsCountInternet"
+          [style] = "{ backgroundColor: 'grey'}">
+          </mat-progress-bar>
+        </div>
+      </div>
+    </div>
+
+<!--    Cantidad de conexiones Red Nacional-->
+    <div class="main-info-PB">
+      <div class="ico">
+        <img class="ico" src="../../../assets/images/conexionRN.svg">
+      </div>
+      <div class="infoFeature">
+        <div class="info">
+          <div class="text">
+            <mat-label> <strong>Cantidad de conexiones en la Red Nacional: </strong></mat-label>
+          </div>
+          <div class="value">
+            <mat-label>{{connectionsCountNationalNumber}} conexiones</mat-label>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <mat-progress-bar mode="{{mode}}" [color]= "colorProgressBarNational"  [value]="connectionsCountNational">
+          </mat-progress-bar>
+        </div>
+      </div>
+    </div>
+
+<!--    Cantidad de usuarios-->
+    <div class="main-info-PB">
+      <div class="ico">
+        <img class="ico" src="../../../assets/images/usuarios.svg">
+      </div>
+      <div class="infoFeature">
+        <div class="info">
+          <div class="text">
+            <mat-label> <strong>Cantidad de usuarios en la Red: </strong></mat-label>
+          </div>
+          <div class="value">
+            <mat-label>{{userCountTotalNumber}} usuarios</mat-label>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <mat-progress-bar  mode="{{mode}}" [color]= "colorProgressBarUser"  [value]="userCountTotal">
+          </mat-progress-bar>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>
+
+

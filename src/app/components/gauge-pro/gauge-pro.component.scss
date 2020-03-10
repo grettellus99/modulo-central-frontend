@@ -1,0 +1,20 @@
+::ng-deep #gauge, #gaugeRN {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  stroke-width: 3;
+}
+::ng-deep #gauge svg.dxg.dxg-circular-gauge .dxg-value-indicator {
+   fill: #165890;
+ }
+::ng-deep #gauge svg.dxg.dxg-circular-gauge .dxg-value-indicator .dxg-spindle-hole {
+  fill: #165890;
+}
+
+::ng-deep #gaugeRN svg.dxg.dxg-circular-gauge .dxg-value-indicator {
+  fill: #165890;
+}
+::ng-deep #gaugeRN svg.dxg.dxg-circular-gauge .dxg-value-indicator .dxg-spindle-hole {
+  fill: #165890;
+}

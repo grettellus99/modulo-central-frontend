@@ -1,0 +1,30 @@
+@import "../../../assets/scss/colors";
+
+
+.tree-root{
+  background: transparent;
+}
+
+mat-nav-list {
+  padding-top: 0;
+}
+
+.menu-container{
+  background: white;
+}
+
+mat-icon, a.mat-line {
+  color: $color-primary;
+}
+
+.active-link {
+  background-color: $color-primary !important;
+
+  mat-icon, a.mat-line {
+    color: white;
+  }
+
+  &:hover {
+    background-color: $color-primary-hover !important;
+  }
+}

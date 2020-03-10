@@ -1,0 +1,206 @@
+@import "../assets/scss/colors";
+@import "../assets/scss/shadows";
+@import "../assets/scss/display";
+
+
+body{
+  height: 100%;
+  width: 100%;
+}
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+  background: $color-primary;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.sidenav-toolbar {
+  background-color: transparent;
+  color: white;
+}
+
+mat-sidenav-content {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.top-bar {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+///////////////login//////////////
+
+//////////Contenedor login y login-features
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  //position: relative;
+}
+
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+h4 {
+  position: relative;
+  left: 3rem;
+  color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-variant-caps: small-caps;
+  margin: auto;
+
+}
+
+mat-toolbar {
+  align-self: flex-start;
+  justify-content: start;
+  padding: 0.5rem;
+}
+
+.icon {
+  width: 4rem;
+  position: relative;
+  top: 0.2rem;
+}
+
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  background-color: white;
+  padding: 1.5rem 0;
+}
+
+.login {
+  flex: 2;
+  justify-content: center;
+  justify-items: center;
+}
+
+.login-features {
+  flex: 3;
+  justify-content: center;
+  justify-items: center;
+}
+
+
+.nav{
+  width: 10%;
+  }
+.outlet{
+  width: 85%;
+}
+
+.footer {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  //position:absolute;
+  //bottom: 0;
+  padding: 0.5rem 0 0;
+}
+
+.icons-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+:hover .footer-icon {
+  opacity: 0.8;
+}
+.gitlab {
+  width: 3rem;
+}
+
+.rocketchat {
+  width: 3rem;
+}
+
+.wekan {
+  width: 5rem;
+}
+
+.nextcloud {
+  width: 5rem;
+}
+
+@media (max-width: 950px)
+{
+  .main-container {
+    position: static;
+  }
+
+  .login-container{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .login {
+    margin: 10% auto;
+  }
+
+  .login-features {
+    justify-content: center;
+    margin: auto;
+  }
+  .icon {
+    width: 3.5rem;
+    bottom: 1.1rem;
+  }
+
+  .footer {
+    position: static;
+  }
+}
+//@media (max-height: 500px)
+//{
+//  .login-container{
+//    flex-wrap: wrap;
+//    justify-content: center;
+//    align-items: center;
+//    margin: 10% auto;
+//  }
+//  .login {
+//    margin: 10% auto;
+//  }
+//  .login-features {
+//    justify-content: center;
+//    margin: auto;
+//  }
+//  .icon {
+//    width: 3.5rem;
+//    bottom: 1.1rem;
+//  }
+//}

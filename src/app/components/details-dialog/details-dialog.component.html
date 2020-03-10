@@ -1,0 +1,17 @@
+<mat-dialog-content>
+  <div>
+    <table mat-table [dataSource]="currentContact.smartphone"  *ngIf="currentContact.smartphone[0].level !== ''">
+      <ng-container matColumnDef="level">
+        <th style="text-align: center; width: 100px" mat-header-cell *matHeaderCellDef>Cargo</th>
+        <td style="text-align: center; width: 100px" mat-cell *matCellDef="let item">{{item.level}}</td>
+      </ng-container>
+      <ng-container matColumnDef="smartphone">
+        <th style="text-align: center" mat-header-cell *matHeaderCellDef>Celular</th>
+        <td style="text-align: center" mat-cell *matCellDef="let item">{{item.number}}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <p *ngIf="currentContact.smartphone[0].level === '' ">No hay teléfonos asociados a cargos en este departamento</p>
+  </div>
+</mat-dialog-content>

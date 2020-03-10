@@ -1,0 +1,41 @@
+
+
+<dx-circular-gauge *ngIf="gaugeTypeInternet" id="gauge" [value]="valueGauge">
+  <dxo-scale
+    [startValue]="0"
+    [endValue]="30"
+    [tickInterval]="3">
+    <dxo-label [useRangeColors]="true"></dxo-label>
+  </dxo-scale>
+  <dxo-range-container palette="pastel">
+    <dxi-range color="teal" [startValue]="0" [endValue]="6"></dxi-range>
+    <dxi-range color="#00C7CE" [startValue]="6" [endValue]="12"></dxi-range>
+    <dxi-range color="#FCAD2D" [startValue]="12" [endValue]="18"></dxi-range>
+    <dxi-range color="#FCAD2D" [startValue]="18" [endValue]="24"></dxi-range>
+    <dxi-range color="#f44336" [startValue]="24" [endValue]="30"></dxi-range>
+  </dxo-range-container>
+  <dxo-geometry
+    [startAngle]="180"
+    [endAngle]="0">
+  </dxo-geometry>
+</dx-circular-gauge>
+
+<dx-circular-gauge *ngIf="!gaugeTypeInternet" id="gaugeRN" [value]="valueGauge">
+  <dxo-scale
+    [startValue]="0"
+    [endValue]="70"
+    [tickInterval]="7">
+    <dxo-label [useRangeColors]="true"></dxo-label>
+  </dxo-scale>
+  <dxo-range-container palette="pastel">
+    <dxi-range color="teal" [startValue]="0" [endValue]="14"></dxi-range>
+    <dxi-range color="#00C7CE" [startValue]="14" [endValue]="28"></dxi-range>
+    <dxi-range color="#FCAD2D" [startValue]="28" [endValue]="42"></dxi-range>
+    <dxi-range color="#FCAD2D" [startValue]="42" [endValue]="56"></dxi-range>
+    <dxi-range color="#f44336" [startValue]="56" [endValue]="70"></dxi-range>
+  </dxo-range-container>
+  <dxo-geometry
+    [startAngle]="180"
+    [endAngle]="0">
+  </dxo-geometry>
+</dx-circular-gauge>

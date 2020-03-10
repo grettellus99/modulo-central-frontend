@@ -1,0 +1,49 @@
+<section class="roles-list_top-wrapper">
+  <header class="roles-list_header">
+    <span>Roles</span>
+    <a mat-mini-fab color="primary" routerLink="./form">
+      <mat-icon>add</mat-icon>
+    </a>
+  </header>
+  <main *ngIf="dataSource" class="mat-elevation-z8">
+    <table mat-table class="full-width-table" [dataSource]="dataSource" aria-label="Elements">
+      <!-- Id Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="active">
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let row">
+          <mat-icon class="roles-list_active" *ngIf="row.active">check_circle</mat-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th style="width: 10%;" mat-header-cell *matHeaderCellDef>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-menu #actionMenu="matMenu" xPosition="before">
+            <a mat-menu-item [routerLink]="['./form', row.id]">
+              <mat-icon>edit</mat-icon>
+              Editar
+            </a>
+            <button mat-menu-item (click)="remove(row)">
+              <mat-icon>delete</mat-icon>
+              Eliminar
+            </button>
+          </mat-menu>
+          <button style="float: right" mat-icon-button [mat-menu-trigger-for]="actionMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </main>
+</section>
+

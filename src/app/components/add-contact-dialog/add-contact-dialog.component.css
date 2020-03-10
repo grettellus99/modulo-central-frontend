@@ -1,0 +1,32 @@
+.container-col {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+mat-form-field {
+  width: 48%;
+  margin-left: 10px;
+}
+mat-checkbox {
+  width: 55%;
+}
+.container-rows {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.smartcheck {
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.spacer {
+  margin-top:10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.smartlabel {
+  margin-top: 13px;
+}

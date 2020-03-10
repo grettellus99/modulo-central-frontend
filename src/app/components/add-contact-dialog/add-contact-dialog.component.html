@@ -1,0 +1,64 @@
+<form [formGroup]="addForm">
+  <mat-dialog-content class="container-rows">
+    <div class="container-col">
+      <mat-form-field appearance="outline">
+        <mat-label>Sector</mat-label>
+        <input matInput formControlName="sector">
+        <mat-error *ngIf="addForm.invalid">{{getSectorErrors()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name">
+        <mat-error *ngIf="addForm.invalid">{{getNameErrors()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-chip-list #extList aria-label="Fruit selection">
+          <mat-chip *ngFor="let xt of extNumbers" [selectable]="selectable"
+                    [removable]="removable" (removed)="removeExt(xt)">
+            {{xt.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="Extensión"
+                 formControlName="extension"
+                 [matChipInputFor]="extList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="addExtension($event)">
+        </mat-chip-list>
+        <mat-error>{{getExtensionErrors()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-chip-list #localPhoneList aria-label="Fruit selection">
+          <mat-chip *ngFor="let lp of localNumbers" [selectable]="selectable"
+                    [removable]="removable" (removed)="removeLP(lp)">
+            {{lp.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="Teléfono Local"
+                 formControlName="localphone"
+                 [matChipInputFor]="localPhoneList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="addLocalPhone($event)">
+        </mat-chip-list>
+        <mat-error>{{getLocalPhoneErrors()}}</mat-error>
+      </mat-form-field>
+      <mat-checkbox formControlName="smartCheckBox">Celular?</mat-checkbox>
+      <mat-form-field appearance="outline" *ngIf="addForm.value.smartCheckBox === true">
+        <mat-label>Número</mat-label>
+        <input matInput formControlName="smartNumber">
+        <mat-error *ngIf="addForm.invalid">{{getSmartNumberErrors()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="addForm.value.smartCheckBox === true">
+        <mat-label>Cargo</mat-label>
+        <input matInput formControlName="level">
+        <mat-error *ngIf="addForm.invalid">{{getLevelErrors()}}</mat-error>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <div class="spacer">
+    <button mat-raised-button mat-dialog-close color="primary" (click)="save()" [disabled]="addForm.invalid">Guardar</button>
+  </div>
+</form>
+
+
